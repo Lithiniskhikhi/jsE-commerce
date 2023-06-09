@@ -1,0 +1,21 @@
+.dropdown:hover>.dropdown-menu{
+    display: block;
+   
+     }
+   h1{
+   
+    text-align: center;
+    font-family: sans-serif;
+   } 
+
+   .releases{
+    width: 3rem;
+    height:3rem ;
+   }
+
+   .btn{
+    margin-left: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgb(128, 19, 128) !important;
+};
