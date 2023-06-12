@@ -2,11 +2,7 @@
     display: block;
    
      }
-   h1{
-   
-    text-align: center;
-    font-family: sans-serif;
-   } 
+  
 
    .releases{
     width: 3rem;
@@ -19,3 +15,21 @@
     margin-bottom: 2rem;
     background-color: rgb(128, 19, 128) !important;
 };
+h1{
+  /* text-align: center; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+
+ h5{
+  text-align: center;
+ }
+ #about{
+  text-align: center;
+ }
+ #contactBTN{
+  width: 10rem;
+  margin-right: 65rem;
+  
+ }
+
+ 
