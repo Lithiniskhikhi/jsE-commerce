@@ -1,61 +1,114 @@
-let checkout = JSON.parse(localStorage.getItem('Music'));
+// let checkout = JSON.parse(localStorage.getItem('Music'));
 
-//  Attach event listeners to "Add to Cart" buttons
-const addToCartButtons = document.querySelectorAll('#see');
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', addToCart);
-});
+// //  Attach event listeners to "Add to Cart" buttons
+// const addToCartButtons = document.querySelectorAll('#see');
+// addToCartButtons.forEach(button => {
+//   button.addEventListener('click', addToCart);
+// });
 
-//  Event handler function
-function addToCart(event) {
-  const button = event.target;
-  const item = button.parentElement;
+// //  Event handler function
+// function addToCart(event) {
+//   const button = event.target;
+//   const item = button.parentElement;
 
-  // Retrieve item information
-  const itemName = item.querySelector('#name').textContent;
-  const itemPrice = item.querySelector('#price').textContent;
-  //
+//   // Retrieve item information
+//   const itemName = item.querySelector('#name').textContent;
+//   const itemPrice = item.querySelector('#price').textContent;
+//   //
 
-  // Create a new object representing the selected item
-  const selectedItem = {
-    name: itemName,
-    price: itemPrice
+//   // Create a new object representing the selected item
+//   const selectedItem = {
+//     name: itemName,
+//     price: itemPrice
 
 
-  };
+//   };
 
-  // Add the selected item to the checkout array
-  checkout.push(selectedItem);
+//   // Add the selected item to the checkout array
+//   checkout.push(selectedItem);
 
-  // Update localStorage with the updated checkout array
-  localStorage.setItem('checkout', JSON.stringify(checkout));
+//   // Update localStorage with the updated checkout array
+//   localStorage.setItem('checkout', JSON.stringify(checkout));
 
-  // Display the items in the checkout
-  loadData(checkout);
-}
+//   // Display the items in the checkout
+//   loadData(checkout);
+// }
 
-// Function to display the items in the checkout
-function loadData(data) {
-  // Clear items
-  display.innerHTML = "";
+// // Function to display the items in the checkout
+// function loadData(data) {
+//   // Clear items
+//   display.innerHTML = "";
 
-  // Display items in the checkout
-  data.forEach((item) => {
-    display.innerHTML += `
-    <tr>
-        <th scope="row">${item.id}</th>
-        <td>${item.name}</td>
-        <td>${item.type}</td>
-        <td><img src="${item.image}"></img></td>
-        <td>${item.price}</td>
+//   // Display items in the checkout
+//   data.forEach((item) => {
+//     display.innerHTML += `
+//     <tr>
+//         <th scope="row">${item.id}</th>
+//         <td>${item.name}</td>
+//         <td>${item.type}</td>
+//         <td><img src="${item.image}"></img></td>
+//         <td>${item.price}</td>
 
-        <td><button onclick="editItem(${item.id})" data-bs-toggle="modal" data-bs-target="#Modal1" style=" border: none; background-color: white;"><i class="fa-solid fa-pen"></i></button></td>
+//         <td><button onclick="editItem(${item.id})" data-bs-toggle="modal" data-bs-target="#Modal1" style=" border: none; background-color: white;"><i class="fa-solid fa-pen"></i></button></td>
 
-        <td><button style=" border: none; background-color: white;" onclick="delItem(${item.id})"><i class="fa-solid fa-trash-can"></button></i></td>
-    </tr>
-    `;
-  });
-}
+//         <td><button style=" border: none; background-color: white;" onclick="delItem(${item.id})"><i class="fa-solid fa-trash-can"></button></i></td>
+//     </tr>
+//     `;
+//   });
+// }
 
-// Load and display items in the checkout when the page loads
-loadData(checkout);
+// // Load and display items in the checkout when the page loads
+// loadData(checkout);
+// function darkMode() {
+//   if (document.body.style.backgroundColor == "black") {
+//     document.body.style.backgroundColor = "white";
+//   } else {
+//     document.body.style.backgroundColor = "black";
+//     document.body.style.Color = "white";
+//   }
+//   console.log(document.body.style.backgroundColor);
+// }
+Music.forEach((item) => {
+  display.innerHTML += `
+      <tr>
+          <th scope="row">${item.id}</th>
+          <td>${item.name}</td>
+          <td>${item.genre}</td>
+          <td><img src="${item.picture}" style="width:5rem;"></img></td>
+          <td>${item.price}</td>
+        
+          <td><button onclick="editItem(${item.id})" data-bs-toggle="modal" data-bs-target="#Modal1" style=" border: none; background-color: white;"><i class="fa-solid fa-pen"></i></button></td>
+
+          <td><button style=" border: none; background-color: white;" onclick="delItem(${item.id})"><i class="fa-solid fa-trash-can"></button></i></td>
+      </tr>
+      `;
+})};
+
+document.onload = loadData();
+
+function addItem() {
+  let id = document.querySelector("#itemID").value;
+  let name = document.querySelector("#name").value;
+  let genre = document.querySelector("#genre").value;
+  let price = document.querySelector("#price").value;
+  let picture = document.querySelector("#picture").value;
+
+  console.log("reached");
+
+  let Music;
+  if (localStorage.getItem("Music") == null) {
+    Music = [];
+  } else {
+    Music = JSON.parse(localStorage.getItem("Music"));
+  }
+
+  Music.push({
+    id: id,
+    name: name,
+    genre: genre,
+    type: type,
+    picture: picture,
+    price: price,
+  });}
+
+  onclick="addItem()

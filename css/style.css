@@ -1,0 +1,111 @@
+.dropdown:hover>.dropdown-menu{
+    display: block;
+   
+     }
+  
+
+   .releases{
+    width: 3rem;
+    height:3rem ;
+   }
+
+   .btn{
+    margin-left: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgb(128, 19, 128) !important;
+};
+h1{
+  /* text-align: center; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+
+ h5{
+  text-align: center;
+ }
+ #about{
+  text-align: center;
+  font-family: "Merriweather", serif;
+ }
+ #contactBTN{
+  width: 10rem;
+  margin-right: 65rem;
+  
+ }
+
+ .fadeIn{ animation: fade 5s;
+
+}
+ /* #frontpic{
+  width:100%;
+  height: 50rem;
+  
+ } */
+ @keyframes fade {
+   0% { opacity: 0.5; }
+   100% { opacity: 1; }
+ }
+ /* Container holding the image and the text */
+.container {
+  /* position: relative; */
+  text-align: center;
+  color: white;
+  width:100% !important;
+}
+
+.container img{
+  width: 100%;
+  /* opacity: 0.8; */
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+}
+
+#visit{
+  text-align: center;
+}
+
+#admin{
+  font-family: "Merriweather", serif;
+  text-align: center;
+
+}
+#checkout{
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+ 

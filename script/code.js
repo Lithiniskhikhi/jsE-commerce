@@ -133,7 +133,7 @@ products.forEach((reader) => {
   divChrome.innerHTML += `
   <div class="col-sm-2 col-lg-3 m-2">
      <div class="card cards-wrapper" style="width: 18rem;border: 3px solid black;margin:3rem; " >
-     <img class="card-img-top cardImg" src="${reader.picture}" alt="${reader.name}" loading="lazy" class="img-fluid">
+     <img class="card-img-top cardImg" src="${reader.picture}" alt="${reader.name}" loading="lazy" class="img-fluid" >
      <h2 class="card-title">${reader.title}</h2>
      <h5 class="card-title price">${reader.cost}</h5>
      <a href="" style =" color:black; width: 4rem; margin-left:6rem;margin-bottom:1rem;border-radius:30%;>
@@ -148,7 +148,7 @@ vinyls.forEach((reader) => {
   divVinyl.innerHTML += `
   <div class="col-sm-2 col-lg-3 m-2" >
      <div class="card cards-wrapper" style="width: 18rem;border: 3px solid black ; margin:3rem;">
-     <img class="card-img-top cardImg" src="${reader.picture}" alt="${reader.name}" loading="lazy" class="img-fluid">
+     <img class="card-img-top cardImg" src="${reader.picture}" alt="${reader.name}" loading="lazy" class="img-fluid" style="height:15rem;">
      <h2 class="card-title">${reader.title}</h2>
      <h5 class="card-title price">${reader.cost}</h5>
      <a href="" style =" color:black; width: 4rem; margin-left:6rem;margin-bottom:1rem;border-radius:30%;>
@@ -158,3 +158,14 @@ vinyls.forEach((reader) => {
      </div>
      `;
 });
+
+function darkMode() {
+  if (document.body.style.backgroundColor == "black") {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "black";
+    document.body.style.Color = "white";
+  }
+  console.log(document.body.style.backgroundColor);
+}
+
