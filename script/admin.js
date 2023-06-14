@@ -75,7 +75,7 @@ let Music = JSON.parse(localStorage.getItem("Music"))
       },
       {
         id: 9,
-        name: " the Goarillas",
+        name: " the Gorillaz",
         genre: "",
         picture:
           "https://i.postimg.cc/05CT6yfs/Screenshot-2023-06-12-105127.png",
@@ -148,6 +148,7 @@ let Music = JSON.parse(localStorage.getItem("Music"))
     ];
 localStorage.setItem("Music", JSON.stringify(Music));
 
+
 function loadData() {
   let Music;
   if (localStorage.getItem("Music") == null) {
@@ -178,7 +179,6 @@ function loadData() {
         `;
   });
 }
-
 document.onload = loadData();
 
 function addItem() {
@@ -187,7 +187,7 @@ function addItem() {
   let genre = document.querySelector("#genre").value;
   let price = document.querySelector("#price").value;
   let picture = document.querySelector("#picture").value;
-
+ 
   console.log("reached");
 
   let Music;
@@ -220,10 +220,10 @@ function delItem(id) {
   Music = Music.filter((item) => {
     return item.id !== id;
   });
-
+  
   // update localStorage
   localStorage.setItem("Music", JSON.stringify(Music));
-
+  
   // Show items
   loadData(Music);
 }
@@ -254,7 +254,7 @@ editItem();
 const textSearch = (e) => {
   const text = e.target.value;
   const filteredItems = Music.filter((item) =>
-    item.name.toLowerCase().includes(text.toLowerCase())
+  item.name.toLowerCase().includes(text.toLowerCase())
   );
 
   loadData(filteredItems);
@@ -269,45 +269,45 @@ function priceSort(e) {
     if (type == price[i].price) {
       return loadData(Music);
     }
-
+    
     } 
     let filtered = Music.filter((i) => price[i].price == type);
     return loadData(filtered);
     console.log(filtered);
-}
-
-
-function genreSort(e) {
-  let genre = [...JSON.parse(localStorage.getItem("Music"))];
+  }
+  
+  
+  function genreSort(e) {
+    let genre = [...JSON.parse(localStorage.getItem("Music"))];
   const type = e.target.value;
-
+  
   console.log(genre);
-    // console.log(genre[i].genre);
-    genre.forEach((item, index) => {
-      console.log([index].genre);
-      // if (type === genre[item].genre) {
+  // console.log(genre[i].genre);
+  genre.forEach((item, index) => {
+    console.log([index].genre);
+    // if (type === genre[item].genre) {
       //   return loadData(Music);
       // }
 
     })
-
-  const filtered = Music.filter((item) => item.genre == type);
-
-  return loadData(filtered);
-}
-
-function updateBtn(id) {
-  let name = document.getElementById("name").value;
-
-  let genre = document.getElementById("#genre").value;
-
-  let abilities = document.getElementById("Genre").value;
-
+    
+    const filtered = Music.filter((item) => item.genre == type);
+    
+    return loadData(filtered);
+  }
+  
+  function updateBtn(id) {
+    let name = document.getElementById("name").value;
+    
+    let genre = document.getElementById("#genre").value;
+    
+    let abilities = document.getElementById("Genre").value;
+    
   let price = document.getElementById("price").value;
-
+  
   // update localStorage
   localStorage.setItem("Music", JSON.stringify(Music));
-
+  
   // Show items
   loadData(Music);
 }
@@ -322,4 +322,26 @@ function darkMode() {
   }
   console.log(document.body.style.backgroundColor);
 }
+let sortBtn = document.querySelector("#sort-btn");
+sortBtn.addEventListener('click', sortId)
+// function sortId(){
+  //   arr.sort((a,b) =>{
+//     return  b.id - a.id
+//   } )
+//   update()
+//   console.log('test',arr);
+// }
+let sortAscending = true;
+function sortId() {
+  if (sortAscending) {
+    arr.sort((a, b) => b.id - a.id);
+  } else {
+    arr.sort((a, b) => a.id - b.id);
+  }
+  sortAscending = !sortAscending;
+  update();
+}
+
+
+
 
