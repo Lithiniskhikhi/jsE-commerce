@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing Admin</title>
+    <!-- Personl CSS  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- icon -->
+    <link rel="icon" href="../Icon/1650861185003-removebg-preview - Copy.png">
+</head>
+<body>
+    <!-- Admin Nav Bar -->
+    <section id="Admin-Navbar">
+        <nav class="navbar">
+            <div class="container-fluid"
+                style="background-color: rgba(128, 128, 128, 0.169); padding-top: 1rem; padding-bottom: 1rem;">
+                <a class="navbar-brand">
+                    Product
+                </a>
+                <form class="d-flex">
+                    <div style="margin-right: 3rem;">
+                        <button
+                            style="border-radius: 20px; border: none; padding-left: 20px; padding-right: 20px; background-color: #FF8FA0;  padding-top: 10px; padding-bottom: 10px;">
+                            <a href="../index.html" style="color: white; text-decoration: none; ">
+                                Go Back To Website
+                            </a>
+                        </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </section>
+    <section id="Search-Bar">
+        <div class="container-fluid">
+            <h1 class="text-center fs-1 fw-light" style="margin-top: 3rem; color: black;">
+                Filter
+            </h1>
+            <div class="row d-flex justify-content-between p-2" id="container" style="background-color: #FF8FA0; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <!-- type -->
+                <div class="col-4 mx-auto">
+                    <label for="typeSort">Type</label>
+                    <br>
+                    <select class="form-select" name="typeSort" id="typeSort" onchange="typeSort(event)">
+                        <option value="" disabled selected hidden>
+                            Items by type
+                        </option>
+                        <option value="all">all</option>
+                        <option value="Albums">Albums</option>
+                        <option value="indie">indie</option>
+                        <option value="hip hop">hip hop</option>
+                        <option value="alternitive">alternitive</option>
+                        <option value="RNB">RNB</option>
+                        <option value="Wings">Wings</option>
+                    </select>
+                </div>
+                <!-- search name -->
+                <div class="col-4 mx-auto">
+                    <label class="mx-auto" for="Search">Search-Bar</label>
+                    <br>
+                    <input class="form-control" type="text" oninput="textSearch(event)" placeholder="Search items"
+                        id="Search">
+                </div>
+                <!-- Price -->
+                <div class="col-4 mx-auto">
+                    <label for="priceSort">Price</label>
+                    <br>
+                    <select class="form-select" name="priceSort" id="priceSort" onchange="priceSort(event)">
+                        <option value="" disabled selected hidden>
+                            Items by price
+                        </option>
+                        <option value="all">all</option>
+                        <option value="500">
+                            500
+                        </option>
+                        <option value="800">
+                            800
+                        </option>
+                        <option value="1500">
+                            1500
+                        </option>
+                        <option value="2000">
+                            2000
+                        </option>
+                        <option value="2500">
+                            2500
+                        </option>
+                        <option value="3000">
+                            3000
+                        </option>
+                        <option value="4500">
+                            4500
+                        </option>
+                        <option value="5000">
+                            5000
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="productTable">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">IMG</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tableContent">
+            </tbody>
+        </table>
+    </section>
+    <Section>
+        <!-- Modal -->
+        <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input style="margin-bottom: 1rem; width: 75%;" id="name"type="text" placeholder="enter name"><br>
+                        <input style="margin-bottom: 1rem; width: 75%;" id="type"type="text" placeholder="enter type"><br>
+                        <input style="margin-bottom: 1rem; width: 75%; height: 3rem;" id="abilities"type="text" placeholder="enter abilities"><br>
+                        <input style="margin-bottom: 1rem; width: 75%;" id="price"type="number" placeholder="enter price"><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="updateBtn(event)">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Section>
+    <!-- Personal JS -->
+    <script src="./script/code.js"></script>
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/7eb4718de9.js" crossorigin="anonymous"></script>
+</body>
+</html>

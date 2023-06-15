@@ -14,9 +14,9 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     background-color: rgb(128, 19, 128) !important;
-};
+}
 h1{
-  /* text-align: center; */
+  text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
 
@@ -113,4 +113,8 @@ nav a:hover{
     text-decoration: underline;
   
 }
- 
+
+#sort-by-price{
+  margin-left: 39%;
+}
+
