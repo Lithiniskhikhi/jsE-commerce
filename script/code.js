@@ -299,7 +299,7 @@ let vinyls = [
       cost: "R 85000",
     },
 ];
-g
+
 // // Rest of your code...
 // Sort products by price
 function sortByGenre() {
